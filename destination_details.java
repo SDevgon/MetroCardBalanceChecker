@@ -5,10 +5,7 @@
  */
 package metrofinder;
 
-/**
- *
- * @author sahil
- */
+
 public class destination_details {
     
     String dest_name;
