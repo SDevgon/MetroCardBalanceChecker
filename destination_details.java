@@ -9,30 +9,43 @@ package metrofinder;
 public class destination_details {
     
     String dest_name;
-    double fare;
+    String source_name;
+    int fare;
      String get_dest_name() {
         return dest_name; 
          
     }
-    Double get_fare() {
+     String get_source_name() {
+        return source_name; 
+         
+    }
+    int get_fare() {
         return fare;
     }
     void set_dest_name(String dname) {
         dest_name=dname;
     }
-    void set_fare(double price) {
+    void set_source_name(String sname) {
+        source_name=sname;
+    }
+    void set_fare(int price) {
         fare=price;
     }
-    static Double fare(String name, destination_details d[]){
-        for(int i=0;i<d.length;i++){
-            if(d[i].get_dest_name().equalsIgnoreCase( name.trim())){ 
+    static int fare(String dname,String sname, destination_details d[])
+    {
+        for(int i=0;i<d.length;i++)
+        {
+           
+            if(d[i].get_dest_name().equalsIgnoreCase( dname.trim())&& d[i].get_source_name().equalsIgnoreCase( sname.trim())){ 
                
                 return( d[i].get_fare() );
                
             }
         }    
-        
-          return -1.0;        
+          System.out.println("Data Doesnt exist, add data Y/N");
+          
+          return 0;        
     
     }
+    
 }

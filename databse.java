@@ -21,12 +21,15 @@ public class databse {
     }
    
     public databse() {
-                 d[0]= new destination_details();
-		d[1]= new destination_details();
-        d[0].set_dest_name("Rajiv Chowk");
+                d[0]= new destination_details();
+                d[0].set_dest_name("Rajiv Chowk");
+                d[0].set_source_name("Dwarka Mor");
 		d[0].set_fare(30);
-                
+                 
+                 
+		d[1]= new destination_details();
 		d[1].set_dest_name("RK Ashram");
+                d[1].set_source_name("Mandi House");
 		d[1].set_fare(40);
     }
     		

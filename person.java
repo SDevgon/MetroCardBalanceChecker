@@ -4,14 +4,23 @@
  * and open the template in the editor.
  */
 package metrofinder;
+import java.util.*;
+import java.io.File;
+
+ import java.io.IOException;
+import java.io.FileWriter;
+import java.io.BufferedWriter;
+import java.io.FileReader;
+import java.io.FileNotFoundException;  
+import java.io.BufferedReader;
 
 
 public class person {
-     double balance;
-     String name;
-     double available;
+      int balance;
+      String cardno;
+     
 
-    public double getBalance() {
+    public  int getBalance() {
         return balance;
     }
 
@@ -19,17 +28,34 @@ public class person {
         this.balance = balance;
     }
 
-    public String getName() {
-        return name;
+    public  String getCardNo() {
+        return cardno;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setCardNo(String no) {
+        this.cardno = no;
     }
-    public double available_balance(double balance, double cost)
+    
+    
+
+     
+   
+public static void printPersonalDetails(ArrayList<person> p)
+{
+ for(person p1:p)
+ {
+     System.out.println(p1.balance);
+      System.out.println(p1.cardno);
+     
+    
+  
+}    
+}
+    public int available_balance(int balance, int cost)
     {   
-        double availablebalance=balance-cost;
+        int availablebalance=balance-cost;
         this.balance=availablebalance;
+        System.out.println("Remaining Balance ->");
         return availablebalance;
     
     }

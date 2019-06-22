@@ -5,6 +5,9 @@
  */
 package metrofinder;
 import java.util.Scanner;
+import java.io.File;
+import java.io.FileWriter;  
+import java.util.ArrayList;
 
 
 public class Metrofinder {
@@ -12,26 +15,44 @@ public class Metrofinder {
     /**
      * @param args the command line arguments
      */
-    public static void main(String[] args) {
-        
+   // public static void main(String[] args) {
+       public static void find(int thresh , String cardno, int balance) {
         databse db = new databse();
         System.out.println("Set Threshold Balance Value ");
         Scanner s = new Scanner(System.in); 
-        double threshold = s.nextInt();
+        int threshold = s.nextInt();
+         ArrayList<person> person_details = new ArrayList<person>();
         person p1=  new person();
-        person p2=  new person();
-        p1.setName("Sanya");
-        p1.setBalance(200);
+        System.out.println("enter metro card number");     //enter metrocard no
+        Scanner sf=new Scanner(System.in);
+        //String cardno = sf.nextLine();
+        p1.setCardNo(cardno);
+        
+        System.out.println("enter card balance");     //enter metrocard no
+        Scanner sj=new Scanner(System.in);
+       // int balance = sj.nextInt();
+        p1.setBalance(balance);
+        person_details.add(p1);
+        
+        person.printPersonalDetails(person_details);
+        //File file = new File("file.java");
+        
+        
         while(true)
         {
+            
           System.out.println("enter destination station");
           Scanner sc=new Scanner(System.in);
-        
           String destination_st = sc.nextLine();
-          double cost=  Util.showfare(destination_st, db.getD());//destination_details.fare(destination_st, d);
+          
+          System.out.println("enter source station");
+          Scanner st=new Scanner(System.in);
+          String source_st = st.nextLine();
+          int cost=  Util.showfare(destination_st,source_st, db.getD());//destination_details.fare(destination_st, d);
           
            //Initial balance is already set assuming previously entered
-          double remainBalance=p1.available_balance(p1.getBalance(), cost);
+          int remainBalance=p1.available_balance(p1.getBalance(), cost);
+          //p1.getPersonal_Details();
           if(p1.getBalance()>threshold)
            {
               System.out.println(remainBalance);
@@ -49,14 +70,6 @@ public class Metrofinder {
                 break;
          
           
-        }
-        
-        
-        
-        
-        
-        
-		
-        
+        }  
     
 }}

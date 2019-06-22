@@ -9,10 +9,19 @@ package metrofinder;
  *
  * @author sahil
  */
-public class Util {
+public class ui {
     
-    static int showfare( String destination_st,String source_st,destination_details d[])
+    public static void main(String[] args)
     {
-      return  destination_details.fare(destination_st,source_st, d);
+        NewJFrame v=new NewJFrame();
+        
+       
+v.setVisible(true);
     }
+
+
+
+
+
+    
 }
